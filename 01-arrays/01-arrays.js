@@ -7,9 +7,7 @@ function invertirOrden(array) {
     // No vale usar el metodo "reverse"
     let nvoArray = [];
     for(i = array.length - 1; i >= 0; i--){
-        if(array[i] < 10){
-            nvoArray.push(array[i]);
-        }
+        if(array[i] < 10 && array[i] >= 0) nvoArray.push(array[i]);
     }
     return nvoArray;
 };
