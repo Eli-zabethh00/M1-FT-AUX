@@ -17,9 +17,23 @@
 // Finalmente la función debe devolver un arreglo con todos los nombres de las personas que pudieron ingresar
 // Importante!: Aquellas personas que no cumplan con los requisitos para ingresar deben ser removidos de la cola 
 
+//fifo, sacar cada persona de la cola y verificar:
+//que sea mayor de 18
+//ticket corresponda al event
+//que el number de ticket no haya ingresado ya
+
 var controlAcces = function(queue, event){
     // Tu código aca:
-
+    let nombres = [];
+    let tickets = [];
+    let persona = queue.dequeue();
+    while(queue.size()){
+      if(persona.age > 18 && persona.ticket.event === event && !tickets.includes(persona.ticket.number)){
+        nombres.push(persona.fullname);
+        tickets.push(persona.ticket.number);
+      }
+    }
+    return nombres;
   };
       
   
